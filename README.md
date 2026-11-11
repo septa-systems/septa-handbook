@@ -1,0 +1,17 @@
+# Manual da Septa Systems
+
+**O time de tecnologia do seu negócio.**
+
+Aqui fica como a Septa trabalha: regras, decisões e o caminho do código até o ar.
+Todo sócio e todo Claude segue este manual.
+
+| Arquivo | O que tem |
+|---|---|
+| [CLAUDE.md](CLAUDE.md) | Regras que o Claude de cada sócio segue |
+| [docs/FLUXO.md](docs/FLUXO.md) | Branch, commit, PR, revisão e deploy |
+| [docs/DECISOES.md](docs/DECISOES.md) | Tudo que o time já decidiu |
+
+## Como mudar este manual
+
+Pelo mesmo fluxo do código: issue → branch → PR → revisão.
+Mudança de regra importante vai antes para a reunião de quarta.
