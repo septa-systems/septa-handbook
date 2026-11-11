@@ -13,6 +13,13 @@ Estúdio de tecnologia com 7 sócios.
 1. Rode `git pull` e confira se está na branch da tarefa, nunca na `main`.
 2. Leia `docs/DECISOES.md` para saber o que o time já decidiu.
 3. Leia a issue da tarefa e trabalhe só no que ela pede.
+4. Mova o card da issue para **Fazendo** no quadro Engenharia (https://github.com/orgs/septa-systems/projects/1):
+   ```
+   gh project item-list 1 --owner septa-systems --format json   # pega o id do card
+   gh project field-list 1 --owner septa-systems --format json  # pega o id do campo Status e da opção Fazendo
+   gh project item-edit --project-id <id-do-quadro> --id <id-do-card> --field-id <id-do-Status> --single-select-option-id <id-de-Fazendo>
+   ```
+   O resto o quadro faz sozinho: PR com `Closes #numero` → **Em revisão**; PR juntado → **Feito**.
 
 ## Enquanto trabalha
 - Não altere arquivos fora do assunto da tarefa.
@@ -25,5 +32,5 @@ Estúdio de tecnologia com 7 sócios.
 - Branch no formato `tipo/numero-da-issue-descricao`, minúsculo e com hífen. Tipos: `feature/`, `bugfix/`, `hotfix/`, `chore/` (ex.: `feature/12-pagina-servicos`).
 - Detalhes do caminho até o ar em `docs/FLUXO.md`.
 - Abra um PR curto, com `Closes #numero` e como testar.
-- Nunca faça merge do próprio PR: outra pessoa revisa.
+- Nunca faça merge: quem aprova e junta é o Tech lead.
 - Se algo foi decidido, registre em `docs/DECISOES.md`.
