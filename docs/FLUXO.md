@@ -61,7 +61,7 @@ Prazo: PR revisado em até **24 h**. Se o Tech lead não conseguir no prazo, avi
 
 | Quem | Ferramenta |
 |---|---|
-| Engenharia (código) | GitHub Projects (issues ligadas aos PRs) |
+| Desenvolvimento (código) | GitHub Projects, quadro **Desenvolvimento** (issues ligadas aos PRs) |
 | Resto da empresa | Trello |
 
 Colunas do GitHub Projects: **A fazer → Fazendo → Em revisão → Feito**.

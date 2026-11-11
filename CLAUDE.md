@@ -13,7 +13,7 @@ Estúdio de tecnologia com 7 sócios.
 1. Rode `git pull` e confira se está na branch da tarefa, nunca na `main`.
 2. Leia `docs/DECISOES.md` para saber o que o time já decidiu.
 3. Leia a issue da tarefa e trabalhe só no que ela pede.
-4. Mova o card da issue para **Fazendo** no quadro Engenharia (https://github.com/orgs/septa-systems/projects/1):
+4. Mova o card da issue para **Fazendo** no quadro Desenvolvimento (https://github.com/orgs/septa-systems/projects/1):
    ```
    gh project item-list 1 --owner septa-systems --format json   # pega o id do card
    gh project field-list 1 --owner septa-systems --format json  # pega o id do campo Status e da opção Fazendo
