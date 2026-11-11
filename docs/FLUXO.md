@@ -4,7 +4,7 @@ Todo código da Septa segue este caminho até o ar. O Tech lead também abre bra
 
 ## O caminho
 
-1. **Issue no GitHub Projects.** Ninguém programa sem issue. Ela diz o que fazer e o que é "pronto".
+1. **Issue no GitHub Projects**, usando o modelo **Tarefa** ou **Bug**. Ninguém programa sem issue. Ela diz o que fazer e o que é "pronto".
 2. **Branch nova a partir da `main` atualizada:**
    ```
    git checkout main
@@ -31,7 +31,7 @@ Todo código da Septa segue este caminho até o ar. O Tech lead também abre bra
    | `test:` | testes | `test: cobre cadastro de cliente` |
    | `chore:` | manutenção, dependências, GitHub Actions | `chore: atualiza Django para 5.2` |
 4. **PR** usando o modelo (abre sozinho). Sempre com `Closes #numero`.
-5. **Teste automático** (GitHub Actions) roda no PR. Falhou, não junta.
+5. **Checagem automática "Padrão do time"** (GitHub Actions) roda no PR: título no padrão de commit, branch no padrão e nada de `.env` ou chave. Falhou, não junta. Nos sistemas, os testes (pytest) entram aqui também.
 6. **Revisão:** o Tech lead aprova (ele é o dono do código no `CODEOWNERS`). O PR do próprio Tech lead pode ser juntado por ele sem aprovação (exceção configurada no GitHub).
 7. **Merge com "Squash and merge"**: vira 1 commit na `main`. A issue fecha sozinha.
 8. **Deploy automático:** o que entra na `main` vai para o ar.
