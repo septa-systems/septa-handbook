@@ -1,0 +1,6 @@
+# Todo texto com fim de linha LF no repositório, igual em Windows, Mac e Linux
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.pdf binary
