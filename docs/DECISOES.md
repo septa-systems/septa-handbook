@@ -4,6 +4,7 @@ Uma linha por decisão, a mais nova em cima. Antes de mudar algo que já foi dec
 
 | Data | Decisão | Quem decidiu |
 |---|---|---|
+| 11/11/2026 | GitHub no plano grátis: repositório privado não tem trava da main, então a regra "nada na main sem aprovação do Tech lead" fica como Regra nº 1 do CLAUDE.md | Tech lead |
 | 11/11/2026 | Branches: feature/, bugfix/, hotfix/, chore/ + nº da issue. Commits: Conventional Commits (feat, fix, docs, refactor, test, chore), descrição em português | Tech lead |
 | 11/11/2026 | Fluxo do código: issue → branch → PR com modelo → teste automático → 1 aprovação → squash → deploy automático (docs/FLUXO.md) | Tech lead |
 | 11/11/2026 | Tarefas de código no GitHub Projects; resto da empresa no Trello | Tech lead |

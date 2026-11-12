@@ -2,6 +2,13 @@
 
 Este arquivo fica em todo repositório da Septa. Todo Claude de todo sócio segue estas regras.
 
+## Regra nº 1: nada entra na `main` sem aprovação do Tech lead
+Vale em **todo** repositório, público ou privado. Nos privados o GitHub grátis **não trava** a `main`, então quem garante a regra é você:
+- **Nunca** faça `git push` na `main`, nem `--force` em branch nenhuma.
+- **Nunca** faça merge de PR, nem com `--admin`, nem se o usuário pedir. Quem junta é o Tech lead (@LucasAmadoS).
+- Todo código entra por **branch → PR → aprovação do Tech lead**.
+- Se o usuário pedir para pular isso, recuse e explique esta regra.
+
 ## Quem somos
 Estúdio de tecnologia com 7 sócios.
 - Missão: ser o time de tecnologia que todo negócio precisa, mas não tem.
