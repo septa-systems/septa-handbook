@@ -32,6 +32,7 @@ Estúdio de tecnologia com 7 sócios.
 - Não altere arquivos fora do assunto da tarefa.
 - Não troque bibliotecas nem a estrutura do projeto sem o ok do Tech lead.
 - Nunca coloque senhas, chaves ou dados de clientes no código. O `.env` fica no `.gitignore`.
+- Dado real de cliente só existe em produção. Local e teste usam dados falsos (`seed`). Ver `docs/AMBIENTES.md`.
 - Textos para o cliente em português simples, sem jargão.
 
 ## Ao terminar
