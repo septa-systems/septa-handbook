@@ -13,4 +13,7 @@ Closes #
 - [ ] Faz só o que a issue pede
 - [ ] Testei no PC e no celular (se for tela)
 - [ ] Sem senha, chave ou dado de cliente no código
+- [ ] Tela/rota nova confere permissão no servidor (ou não se aplica)
+- [ ] Dado pessoal novo? Está no PRD com o motivo (ou não se aplica)
+- [ ] `/security-review` rodado (PR de sistema)
 - [ ] Teste automático passando

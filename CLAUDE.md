@@ -15,6 +15,12 @@ Em projeto ou funcionalidade nova, antes de programar precisam existir **e estar
 - Ao programar, siga a arquitetura aprovada. Se precisar mudar algo dela, pare e proponha uma ADR.
 - Correções pequenas (`bugfix/`, `hotfix/`, `chore/`) não precisam de PRD.
 
+## Regra nº 3: segurança em toda tarefa
+Siga o `docs/SEGURANCA.md`. O mínimo, sempre:
+- Toda view/rota nova confere permissão no servidor. Em sistema com vários clientes, toda consulta filtra pelo cliente e tem teste.
+- Nunca peça nem aceite dado real de cliente, senha ou `.env` na conversa. Se o usuário colar, avise e trabalhe com dados falsos.
+- Em PR de sistema, rode o `/security-review` antes de pedir a aprovação do Tech lead.
+
 ## Quem somos
 Estúdio de tecnologia com 7 sócios.
 - Missão: ser o time de tecnologia que todo negócio precisa, mas não tem.

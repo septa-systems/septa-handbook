@@ -54,7 +54,7 @@ Modelos de cada arquivo em `docs/modelos/` deste manual.
 | **Módulo profundo** (John Ousterhout) | interface pequena, muita lógica dentro | funções de serviço com poucos parâmetros, fáceis de testar |
 | **KISS e YAGNI** | o mais simples que resolve; nada que não foi pedido | nosso valor "simples primeiro" |
 | **Pirâmide de testes** | muitos testes pequenos, poucos grandes | pytest nas regras de negócio (`services.py`); poucos testes de tela |
-| **Segurança desde o projeto** | segurança é decidida antes, não remendada depois | seção obrigatória no `arquitetura.md` (ver `docs/SEGURANCA.md`, quando existir) |
+| **Segurança desde o projeto** | segurança é decidida antes, não remendada depois | seção obrigatória no `arquitetura.md` (ver `docs/SEGURANCA.md`) |
 
 ## Estrutura padrão de um sistema Django
 
