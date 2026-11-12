@@ -10,6 +10,9 @@ Todo sócio e todo Claude segue este manual.
 | [CLAUDE.md](CLAUDE.md) | Regras que o Claude de cada sócio segue |
 | [docs/FLUXO.md](docs/FLUXO.md) | Branch, commit, PR, revisão e deploy |
 | [docs/AMBIENTES.md](docs/AMBIENTES.md) | Local, teste e produção |
+| [docs/ARQUITETURA.md](docs/ARQUITETURA.md) | Como um projeto nasce: 5 fases e fundamentos |
+| [docs/modelos/](docs/modelos/) | Modelos: entrevista com cliente, PRD, arquitetura, ADR |
+| [.claude/skills/](.claude/skills/) | Comandos do Claude: `/grill-me`, `/write-prd`, `/arquitetura` |
 | [docs/DECISOES.md](docs/DECISOES.md) | Tudo que o time já decidiu |
 
 ## Como mudar este manual
