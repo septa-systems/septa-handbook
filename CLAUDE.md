@@ -43,6 +43,8 @@ Estúdio de tecnologia com 7 sócios.
 ## Enquanto trabalha
 - Não altere arquivos fora do assunto da tarefa.
 - Não troque bibliotecas nem a estrutura do projeto sem o ok do Tech lead.
+- Siga o `docs/PADROES.md`: nomes do negócio em português sem acento (`Agendamento`, `cancelar_agendamento`), regra em `services.py`, testes obrigatórios (regra, permissão, bug corrigido).
+- Antes de abrir o PR, rode o que a checagem roda (Ruff e pytest, ou Prettier e astro check) e corrija.
 - Nunca coloque senhas, chaves ou dados de clientes no código. O `.env` fica no `.gitignore`.
 - Dado real de cliente só existe em produção. Local e teste usam dados falsos (`seed`). Ver `docs/AMBIENTES.md`.
 - Textos para o cliente em português simples, sem jargão.
