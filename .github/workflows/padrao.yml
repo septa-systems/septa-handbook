@@ -35,7 +35,8 @@ jobs:
           fi
 
       - name: Nome da branch no padrão
-        if: github.event_name == 'pull_request'
+        # Branches do Dependabot (dependabot/...) têm nome próprio e ficam de fora desta regra
+        if: github.event_name == 'pull_request' && !startsWith(github.head_ref, 'dependabot/')
         env:
           BRANCH: ${{ github.head_ref }}
         run: |
