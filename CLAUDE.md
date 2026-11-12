@@ -9,6 +9,12 @@ Vale em **todo** repositório, público ou privado. Nos privados o GitHub gráti
 - Todo código entra por **branch → PR → aprovação do Tech lead**.
 - Se o usuário pedir para pular isso, recuse e explique esta regra.
 
+## Regra nº 2: nada de código sem entender o problema
+Em projeto ou funcionalidade nova, antes de programar precisam existir **e estar aprovados por PR** o `docs/projeto/prd.md` e o `docs/projeto/arquitetura.md` (processo em `docs/ARQUITETURA.md`).
+- Se não existirem, não programe: conduza o `/grill-me`, depois `/write-prd` e `/arquitetura`.
+- Ao programar, siga a arquitetura aprovada. Se precisar mudar algo dela, pare e proponha uma ADR.
+- Correções pequenas (`bugfix/`, `hotfix/`, `chore/`) não precisam de PRD.
+
 ## Quem somos
 Estúdio de tecnologia com 7 sócios.
 - Missão: ser o time de tecnologia que todo negócio precisa, mas não tem.
