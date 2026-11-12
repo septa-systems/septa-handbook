@@ -9,6 +9,7 @@ Todo sócio e todo Claude segue este manual.
 |---|---|
 | [CLAUDE.md](CLAUDE.md) | Regras que o Claude de cada sócio segue |
 | [docs/FLUXO.md](docs/FLUXO.md) | Branch, commit, PR, revisão e deploy |
+| [docs/AMBIENTES.md](docs/AMBIENTES.md) | Local, teste e produção |
 | [docs/DECISOES.md](docs/DECISOES.md) | Tudo que o time já decidiu |
 
 ## Como mudar este manual
