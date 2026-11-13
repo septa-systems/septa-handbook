@@ -54,6 +54,24 @@ Todo código da Septa segue este caminho até o ar. O Tech lead também abre bra
 - Testei pelo link de prévia ou rodando local?
 - Tem senha, chave ou dado de cliente no código?
 - Um sócio que não escreveu isso entende o código?
+- Toda view nova confere permissão? Tem teste de outra empresa dando 404?
+- Se eu quebrar a regra de propósito, algum teste fica vermelho?
+- Cada arquivo tem um motivo só para mudar? Uma mudança pequena se espalhou por vários arquivos?
+- Importa `views` ou `_função` de outro app? Criou camada ou abstração que não precisava?
+- Ficou mais simples, ou só mais abstrato?
+
+**5 minutos tentando quebrar:** o revisor usa a tela como o cliente usaria e tenta quebrar com campo vazio, número negativo, clique duplo e o celular. A automação repete o que já sabe; uma pessoa descobre o que ninguém pensou.
+
+## Depois do deploy: teste rápido (smoke)
+
+2 minutos, sempre: abrir o site, fazer login, abrir a tela principal e criar um registro de teste. Quebrou → `hotfix/`.
+
+## Regras do time
+
+- **No máximo 2 tarefas em Fazendo** por pessoa. Termine antes de pegar outra.
+- **Tarefa de outra pessoa:** só pegue se ela liberar ou se o Líder passar para você.
+- **Deu conflito?** Quem abriu o PR por último resolve.
+- **Mudança que afeta os outros** (estrutura, biblioteca, banco): avise no grupo Código e espere o ok do Tech lead.
 
 Prazo: PR revisado em até **24 h**. Se o Tech lead não conseguir no prazo, avisa no grupo.
 
