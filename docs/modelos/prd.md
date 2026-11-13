@@ -8,7 +8,7 @@ O que o usuário sofre, do ponto de vista dele. Vem da entrevista.
 ## Como medir o sucesso
 Um número concreto. Ex.: "as faltas caem de 5 para menos de 1 por semana".
 
-**Meta de usabilidade** (tarefa principal, com número): "<quantos> de 10 <papel> conseguem <tarefa principal> sozinhos em até <tempo>, pelo <aparelho>". Ex. do petshop: "9 de 10 tutores agendam sozinhos em até 2 minutos, pelo celular".
+**Meta de usabilidade** (tarefa principal, com número): "<quantos> de 10 <papel> conseguem <tarefa principal> sozinhos em até <tempo>, pelo <aparelho>". Ex. (barbearia): "9 de 10 clientes agendam sozinhos em até 2 minutos, pelo celular".
 
 ## Solução
 O que vai ser feito, em poucas linhas.
@@ -43,7 +43,7 @@ Escritos antes de programar. Viram os testes do pytest quase um para um. Inclua 
 | CT03 | Mesmo pedido enviado 2 vezes | Reenviar | Registra uma vez só |
 | CT04 | Usuário da empresa A | Abrir dado da empresa B | 404; nada vaza |
 
-CT03 e CT04 entram em **todo** sistema. Ex. do petshop para o CT01: "Horário já ocupado → Agendar → Recusa e mostra outros horários".
+CT03 e CT04 entram em **todo** sistema. Ex. (barbearia) para o CT01: "Horário já ocupado → Agendar → Recusa e mostra outros horários".
 
 ## Fora do escopo
 O que NÃO será feito agora.

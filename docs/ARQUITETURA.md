@@ -36,7 +36,7 @@ Os modelos de cada arquivo ficam em `docs/modelos/` deste manual.
 ### 1. Descoberta (com o cliente)
 - Conversa com o cliente usando `docs/modelos/entrevista-cliente.md`.
 - Sai daqui: **o problema em 1 frase** e **como medir o sucesso**.
-  Ex.: "O petshop perde ~5 horários por semana porque o cliente esquece. Sucesso = menos de 1 por semana."
+  Ex.: "A barbearia perde ~5 horários por semana porque o cliente esquece. Sucesso = menos de 1 por semana."
 - Quem: Vendas / Sucesso do cliente + Tech lead.
 - Arquivo: `docs/projeto/entrevista.md`.
 
@@ -49,12 +49,12 @@ Os modelos de cada arquivo ficam em `docs/modelos/` deste manual.
 - `/arquitetura`: o Claude monta, a partir do PRD, o documento de arquitetura e as ADRs.
 - Arquivos: `docs/projeto/arquitetura.md` e `docs/projeto/adr/`.
 - **Do PRD para o modelo de domínio, em 5 passos:**
-  1. **Achar os conceitos**: os substantivos do PRD e do glossário (tutor, pet, horário, serviço).
+  1. **Achar os conceitos**: os substantivos do PRD e do glossário (cliente, barbeiro, horário, serviço).
   2. **Tirar os falsos**: tela, botão, verbo solto e detalhe técnico não viram classe.
   3. **Ligar**: quem tem, contém ou depende de quem.
-  4. **Validar os números**: a multiplicidade de cada ponta, com o cliente ("um pet pode ter dois donos?").
+  4. **Validar os números**: a multiplicidade de cada ponta, com o cliente ("um agendamento pode ter mais de um serviço?").
   5. **Detalhar com propósito**: só os atributos que explicam uma regra.
-- **Os mesmos nomes em todos os níveis**: se no C1 é "Agenda do petshop" e no domínio é "Agendamento", o app é `agenda` e o model é `Agendamento`.
+- **Os mesmos nomes em todos os níveis**: se no C1 é "Agenda da barbearia" e no domínio é "Agendamento", o app é `agenda` e o model é `Agendamento`.
 - **Decida logo aqui o que custa caro mudar depois**, com ADR. Ex.: vários clientes num banco só (coluna `empresa_id`) ou um banco por cliente.
 
 ### 4. Revisão humana
