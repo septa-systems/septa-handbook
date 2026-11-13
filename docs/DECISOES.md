@@ -4,6 +4,7 @@ Uma linha por decisão, a mais nova em cima. Antes de mudar algo que já foi dec
 
 | Data | Decisão | Quem decidiu |
 |---|---|---|
+| 13/11/2026 | Repo novo só pelo `scripts/novo-repo.sh` (docs/NOVO-REPO.md): privado por padrão, nome `site-cliente` ou `sistema-cliente` | Tech lead |
 | 11/11/2026 | Padrões de código (docs/PADROES.md): nomes do negócio em português sem acento, Django em inglês; Ruff + pre-commit; testes obrigatórios de regra, permissão e bug corrigido; sem meta de % de cobertura | Tech lead |
 | 11/11/2026 | Segurança (docs/SEGURANCA.md): base OWASP Top 10 + ASVS nível 1 + LGPD; nunca dado real de cliente no Claude; Dependabot e secret scanning ligados | Tech lead |
 | 11/11/2026 | Processo de arquitetura em 5 fases (docs/ARQUITETURA.md): sem PRD e arquitetura aprovados, não se programa. Fundamentos: C4, ADR, monólito primeiro, DDD leve, 12-Factor, SOLID, KISS/YAGNI, pirâmide de testes | Tech lead |
