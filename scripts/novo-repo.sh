@@ -12,12 +12,13 @@
 #   --so-config  não cria nada, só aplica a configuração num repo que já existe
 #   --simular    só mostra o que faria, sem mudar nada no GitHub
 #
-# Precisa: gh logado com os escopos repo, workflow e project
-# (gh auth refresh -s project) e ser admin da org.
+# Precisa: gh logado com os escopos repo, workflow, project e admin:org
+# (gh auth refresh -s project,admin:org) e ser admin da org.
 set -euo pipefail
 
 ORG="septa-systems"
 QUADRO=1 # projeto "Desenvolvimento"
+TIME="socios" # time que programa: recebe Write no repo novo
 
 uso() { sed -n '5,14p' "$0" | sed 's/^# \{0,1\}//'; exit 1; }
 
@@ -154,6 +155,10 @@ if [ -n "$JA" ]; then
 else
   faz gh project link "$QUADRO" --owner "$ORG" --repo "$REPO"
 fi
+
+# 6. Dar acesso ao time (sem isso, em repo privado os sócios só leem e não abrem PR)
+passo "Time $TIME com Write no repo"
+faz gh api -X PUT "orgs/$ORG/teams/$TIME/repos/$REPO" -f permission=push --silent
 
 echo
 echo "Pronto: https://github.com/$REPO"
