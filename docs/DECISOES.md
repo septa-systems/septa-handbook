@@ -4,6 +4,7 @@ Uma linha por decisão, a mais nova em cima. Antes de mudar algo que já foi dec
 
 | Data | Decisão | Quem decidiu |
 |---|---|---|
+| 13/11/2026 | Continuam 3 ambientes (Local, Teste, Produção); Teste faz o papel de DEV/QA/HOMOLOG. Rollback: primeiro volta, depois investiga (Vercel Instant Rollback / deploy da versão anterior) | Tech lead |
 | 13/11/2026 | Manual com o que veio das aulas: tabela do começo ao fim; C1/C2 com tipo e verbo, modelo de domínio em classDiagram, restrições, cenários de qualidade, ADR com o que sacrificamos; fila de saída + worker no lugar de Celery/Redis; regra de import entre apps; dinheiro em Decimal; testes de 404, clique duplo e limites; sessão do Django em vez de JWT; UX com heurísticas (/revisar-tela) e teste com 5 pessoas | Tech lead |
 | 13/11/2026 | Repo novo só pelo `scripts/novo-repo.sh` (docs/NOVO-REPO.md): privado por padrão, nome `site-cliente` ou `sistema-cliente` | Tech lead |
 | 11/11/2026 | Padrões de código (docs/PADROES.md): nomes do negócio em português sem acento, Django em inglês; Ruff + pre-commit; testes obrigatórios de regra, permissão e bug corrigido; sem meta de % de cobertura | Tech lead |

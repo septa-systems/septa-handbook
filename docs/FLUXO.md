@@ -34,7 +34,7 @@ Todo código da Septa segue este caminho até o ar. O Tech lead também abre bra
 5. **Checagem automática "Padrão do time"** (GitHub Actions) roda no PR: título no padrão de commit, branch no padrão e nada de `.env` ou chave. Falhou, não junta. Nos sistemas, os testes (pytest) entram aqui também.
 6. **Revisão:** o Tech lead aprova (ele é o dono do código no `CODEOWNERS`). O PR do próprio Tech lead pode ser juntado por ele sem aprovação (exceção configurada no GitHub).
 7. **Merge com "Squash and merge"**: vira 1 commit na `main`. A issue fecha sozinha.
-8. **Deploy automático:** o que entra na `main` vai para o ar.
+8. **Deploy:** nos sites, o que entra na `main` vai para o ar sozinho. Nos sistemas, vai sozinho para o Teste, e a Produção sobe pelo botão do Tech lead (ver `docs/AMBIENTES.md`). Quebrou? Rollback antes de tudo (mesmo arquivo).
 
 ## Proteção da `main` (configurada no GitHub)
 
@@ -64,7 +64,7 @@ Todo código da Septa segue este caminho até o ar. O Tech lead também abre bra
 
 ## Depois do deploy: teste rápido (smoke)
 
-2 minutos, sempre: abrir o site, fazer login, abrir a tela principal e criar um registro de teste. Quebrou → `hotfix/`.
+2 minutos, sempre: abrir o site, fazer login, abrir a tela principal e criar um registro de teste. Quebrou → rollback (`docs/AMBIENTES.md`) e depois `hotfix/`.
 
 ## Regras do time
 
