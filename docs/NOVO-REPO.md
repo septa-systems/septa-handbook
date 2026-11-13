@@ -15,16 +15,16 @@ Só o Tech lead (admin da org) roda o script.
 
 ```bash
 # 1. ver o que vai acontecer, sem mudar nada
-scripts/novo-repo.sh site-pet-sniff site --simular
+scripts/novo-repo.sh site-padaria-joao site --simular
 
 # 2. criar de verdade
-scripts/novo-repo.sh site-pet-sniff site
+scripts/novo-repo.sh site-padaria-joao site
 
 # 3. baixar e seguir o README do projeto
-gh repo clone septa-systems/site-pet-sniff
+gh repo clone septa-systems/site-padaria-joao
 ```
 
-**Nome do repo:** tudo minúsculo, sem acento, com hífen, começando pelo tipo: `site-pet-sniff`, `sistema-agenda-pet-sniff`.
+**Nome do repo:** tudo minúsculo, sem acento, com hífen, começando pelo tipo: `site-padaria-joao`, `sistema-agenda-barbearia-ze`.
 
 ## O que o script configura
 

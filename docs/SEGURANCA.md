@@ -40,7 +40,7 @@ Segurança é decidida **no projeto** (seção 6 do `arquitetura.md`), não reme
 ### Login: o que usar em cada projeto
 | Projeto | Use | Não use antes de precisar |
 |---|---|---|
-| Sistema com login próprio (ex.: SaaS do petshop) | **sessão do Django** (cookie HttpOnly, Secure, SameSite) | JWT |
+| Sistema com login próprio (ex.: agenda de uma barbearia) | **sessão do Django** (cookie HttpOnly, Secure, SameSite) | JWT |
 | App de celular ou API para terceiros | OAuth 2.0 com PKCE; JWT validando assinatura, `iss`, `aud` e `exp`; Refresh Token com rotação | Implicit Flow; token na URL ou no log |
 | "Entrar com Google" | OIDC pelo `django-allauth` | guardar a senha do Google |
 | Cliente corporativo com vários sistemas | SSO (Keycloak, OIDC/SAML), LDAP/AD | qualquer um destes num cliente pequeno |

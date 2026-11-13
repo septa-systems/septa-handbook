@@ -2,7 +2,7 @@
 
 Status: rascunho / aprovado · Base: `docs/projeto/prd.md` · Data: __/__/____
 
-> **Como usar este modelo:** troque tudo que está entre `<...>` e os nomes genéricos dos diagramas (Papel 1, Conceito A...) pelos do seu projeto, com as palavras do glossário do PRD. Os blocos "Exemplo" mostram um projeto real da Septa (agenda de petshop) só para referência: **apague-os** no documento do seu projeto.
+> **Como usar este modelo:** troque tudo que está entre `<...>` e os nomes genéricos dos diagramas (Papel 1, Conceito A...) pelos do seu projeto, com as palavras do glossário do PRD. Os blocos "Exemplo" mostram um projeto **fictício** (agenda de uma barbearia) só para referência: **apague-os** no documento do seu projeto.
 
 ## 1. Contexto (C4 nível 1)
 Quem usa o sistema e com quais sistemas de fora ele conversa. É o diagrama para o cliente entender.
@@ -18,12 +18,13 @@ flowchart LR
   sis -- "verbo: o que pede" --> ext["Serviço de fora [sistema externo]"]
 ```
 
-<details><summary>Exemplo (projeto do petshop)</summary>
+<details><summary>Exemplo (fictício: agenda de uma barbearia)</summary>
 
 ```mermaid
 flowchart LR
-  dono["Dono [pessoa]"] -- "vê agenda, faturamento e equipe" --> sis["Agenda do petshop [este sistema]"]
-  tutor["Tutor [pessoa]"] -- "agenda, reagenda, cancela" --> sis
+  dono["Dono [pessoa]"] -- "vê agenda, faturamento e equipe" --> sis["Agenda da barbearia [este sistema]"]
+  cliente["Cliente [pessoa]"] -- "agenda, reagenda, cancela" --> sis
+  barbeiro["Barbeiro [pessoa]"] -- "vê a própria agenda" --> sis
   sis -- "envia avisos" --> whatsapp["WhatsApp [sistema externo]"]
   sis -- "envia e-mails" --> email["Serviço de e-mail [sistema externo]"]
 ```
@@ -72,12 +73,12 @@ classDiagram
 - `*--` (composição) = a parte não existe sem o todo. Herança (`<|--`) quase nunca: no Django, um campo `tipo` costuma resolver.
 - Atributo só aparece quando explica uma regra.
 
-<details><summary>Exemplo (projeto do petshop)</summary>
+<details><summary>Exemplo (fictício: agenda de uma barbearia)</summary>
 
 ```mermaid
 classDiagram
-  Tutor "1" -- "0..*" Pet : tem
-  Pet "1" -- "0..*" Agendamento : recebe
+  Cliente "1" -- "0..*" Agendamento : faz
+  Barbeiro "1" -- "0..*" Agendamento : atende
   Agendamento "1" *-- "1..*" Item : contém
   Item "0..*" -- "1" Servico : de
   class Item {
@@ -110,11 +111,11 @@ Cada requisito é um cenário: **estímulo → resposta → medida**. "Rápido e
 
 Tempo se mede pelo **p95** (95% dos pedidos ficam abaixo), nunca pela média. Também vale anotar aqui: celular primeiro? Qual a meta de usabilidade do PRD?
 
-<details><summary>Exemplo (projeto do petshop)</summary>
+<details><summary>Exemplo (fictício: agenda de uma barbearia)</summary>
 
 | Estímulo | Resposta | Medida |
 |---|---|---|
-| Sexta 18h, 200 tutores buscam horário | mostra os horários livres sem erro | 95% das buscas em até 2 s; zero horário vendido duas vezes |
+| Sexta 18h, 200 clientes buscam horário | mostra os horários livres sem erro | 95% das buscas em até 2 s; zero horário vendido duas vezes |
 | O servidor cai às 3h | volta sozinho; o backup existe | no ar em até 30 min; perda máxima de 24 h |
 </details>
 

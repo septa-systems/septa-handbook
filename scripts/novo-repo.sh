@@ -41,7 +41,7 @@ case "$TIPO" in
 esac
 
 if ! echo "$NOME" | grep -Eq '^[a-z0-9]+(-[a-z0-9]+)*$'; then
-  echo "Nome fora do padrão: use minúsculo, sem acento, com hífen (ex.: site-pet-sniff)."
+  echo "Nome fora do padrão: use minúsculo, sem acento, com hífen (ex.: site-padaria-joao)."
   exit 1
 fi
 
