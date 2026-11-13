@@ -4,7 +4,7 @@ Todo projeto de cliente nasce de um dos modelos:
 
 | Tipo | Modelo | Para quê |
 |---|---|---|
-| `site` | [modelo-site](https://github.com/septa-systems/modelo-site) | Site, landing page, cardápio (Astro + Vercel) |
+| `site` | [modelo-site](https://github.com/septa-systems/modelo-site) | Site, landing page, cardápio (Astro + Cloudflare) |
 | `sistema` | [modelo-sistema](https://github.com/septa-systems/modelo-sistema) | Sistema com login e banco (Django + PostgreSQL) |
 
 Quando um repo é criado a partir de um modelo, o GitHub copia **só o código**. A configuração fica para trás. Por isso existe o `scripts/novo-repo.sh`.
