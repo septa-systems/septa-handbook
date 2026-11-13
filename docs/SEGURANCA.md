@@ -34,6 +34,23 @@ Segurança é decidida **no projeto** (seção 6 do `arquitetura.md`), não reme
 - Limite de tentativas com `django-axes`.
 - Admin do Django em endereço diferente de `/admin/` e com 2FA (`django-otp`).
 - Senha mínima de 8 caracteres e validadores padrão do Django.
+- **Pedir a senha de novo** antes de ação sem volta (apagar conta, excluir dados, trocar e-mail ou permissões).
+- **Segurança proporcional ao risco:** 2FA obrigatório para quem administra (dono, admin); o cliente final entra só com a senha.
+
+### Login: o que usar em cada projeto
+| Projeto | Use | Não use antes de precisar |
+|---|---|---|
+| Sistema com login próprio (ex.: SaaS do petshop) | **sessão do Django** (cookie HttpOnly, Secure, SameSite) | JWT |
+| App de celular ou API para terceiros | OAuth 2.0 com PKCE; JWT validando assinatura, `iss`, `aud` e `exp`; Refresh Token com rotação | Implicit Flow; token na URL ou no log |
+| "Entrar com Google" | OIDC pelo `django-allauth` | guardar a senha do Google |
+| Cliente corporativo com vários sistemas | SSO (Keycloak, OIDC/SAML), LDAP/AD | qualquer um destes num cliente pequeno |
+
+Cada peça a mais é mais uma coisa para manter e proteger. Na dúvida, sessão do Django.
+
+### Papéis e registro
+- **Papéis simples** (ex.: dono, recepção, profissional) num campo `papel`, conferidos no servidor em cada view. Grupos e permissões do Django só se o cliente precisar montar papéis sozinho.
+- **Registrar os eventos de segurança**: login certo e errado, ações de admin, mudança de papel e exclusões. Sem senha, token ou dado pessoal no registro.
+- **API**: limite de pedidos por minuto (rate limit) nas rotas públicas e de login.
 
 ### Configuração de produção
 ```python
@@ -63,7 +80,8 @@ Antes de publicar: `python manage.py check --deploy` sem avisos.
 
 ## 6. Antes de lançar um sistema
 - [ ] `check --deploy` sem avisos
-- [ ] Teste de "cliente A não vê cliente B" passando
+- [ ] Teste de "cliente A não vê cliente B" passando (trocar o id na URL dá 404)
+- [ ] `pip-audit` (sistemas) ou `npm audit` (sites) sem falha alta
 - [ ] `/security-review` no código todo
 - [ ] Varredura com [OWASP ZAP](https://www.zaproxy.org/) (modo baseline) no ambiente de teste
 - [ ] Backup configurado e restaurado uma vez

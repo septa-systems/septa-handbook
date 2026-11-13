@@ -46,7 +46,12 @@ select = ["E", "F", "I", "B", "UP", "DJ", "S"]
 ## 3. Escrita do código
 
 - **Funções pequenas, uma tarefa cada.** Se precisou de "e" para explicar, divida.
-- **Regra de negócio em `services.py`**, view fina (ver `docs/ARQUITETURA.md`).
+- **Regra de negócio em `services.py`**, view fina (ver `docs/ARQUITETURA.md`). Cadastro simples sem regra não precisa de service: ModelForm + view genérica. Service que só chama `.save()` é camada a mais.
+- **Entre apps** só se importa `models.py`, `services.py` e `forms.py`/`serializers.py`. Nunca `views.py`, templates ou função que começa com `_`. Precisou de algo da view de outro app? Mova para o `services.py` dele.
+- **Dinheiro sempre em `Decimal`** (`DecimalField` no model), nunca `float`.
+- **Serviço de fora atrás de um contrato só:** WhatsApp, e-mail e pagamento têm uma função (`enviar_aviso(...)`) e o provedor vem da configuração (console no PC, real em produção, mock no teste). Todo provedor reage igual a erro.
+- **Abstração só se passar nas 3 perguntas:** reduz uma mudança que vai acontecer? deixa o teste mais fácil? protege uma fronteira importante (como provedor de fora)? Se não, não crie.
+- **Refatoração vai num PR separado** (`refactor:`), com os testes passando antes e depois, sem misturar com funcionalidade nova. Arquivo grande que funciona se divide quando for mexer nele.
 - **Tipos nas funções de serviço:**
   ```python
   def agendar(cliente: Cliente, servico: Servico, inicio: datetime) -> Agendamento:
@@ -61,10 +66,18 @@ select = ["E", "F", "I", "B", "UP", "DJ", "S"]
 
 Ferramentas: **pytest + pytest-django + factory_boy** (cria dados falsos rápido).
 
-**Obrigatório testar:**
-1. Toda regra de negócio em `services.py`.
-2. Permissões: usuário sem acesso é bloqueado; cliente A não vê cliente B.
-3. **Todo bug corrigido ganha um teste** que falhava antes da correção.
+**Obrigatório testar** (começando pelo que mais dói se der errado):
+1. **Isolamento**: usuário da empresa A abre cliente da empresa B → **404** (não 403: nem confirma que existe). É o bug mais grave de um SaaS.
+2. **Permissões**: sem login redireciona; funcionário comum não abre tela de dono.
+3. **Dinheiro**: desconto, comissão e total certos, em `Decimal`.
+4. **Duplicidade**: clicar duas vezes ou reenviar o pedido não agenda nem cobra duas vezes.
+5. **Integrações**: a regra chama o envio de WhatsApp/e-mail (com mock, sem enviar de verdade).
+6. Toda regra de negócio em `services.py`.
+7. **Todo bug corrigido ganha um teste** que falhava antes da correção.
+
+**Como escolher os casos:** um valor de cada grupo (válido, abaixo, acima) e **os limites**, porque bug adora morar na borda (`<` no lugar de `<=`). Cupom de R$ 100 a R$ 500 → teste 99, 100, 500 e 501. Os casos de teste do PRD viram os testes quase um para um.
+
+**O teste protege?** Se eu quebrar a regra de propósito, algum teste fica vermelho? Se não fica, o teste não está protegendo nada.
 
 Regras:
 - Sem meta de porcentagem por enquanto (vira teste inútil para bater número).
@@ -92,6 +105,12 @@ Regras:
 - **Celular primeiro**: o cliente de pequeno negócio usa celular.
 - **Acessibilidade básica**: todo campo com `<label>`, toda imagem com `alt`, contraste legível, dá para usar só com o teclado.
 - Textos em português simples, sem jargão (é o nosso tom).
+- **Botão que envia** mostra "Enviando..." e fica travado até responder (evita clique duplo).
+- **Impedir o erro antes**: horário ocupado já aparece bloqueado, e não recusado só no fim.
+- **Mensagem de erro diz o que houve e o que fazer**, na língua do usuário: "Este horário acabou de ser reservado. Escolha outro.", e nunca "Erro 409" ou "Ocorreu um erro".
+- **Dá para voltar, corrigir e cancelar** sem recomeçar e sem perder o que já foi preenchido.
+- **Antes de entregar uma tela**, rode o `/revisar-tela` (as 10 heurísticas de Nielsen).
+- **Antes de lançar**, teste com umas **5 pessoas reais** do público, dando o objetivo ("marque um banho para terça") e não o caminho. Anote sucesso, tempo (mediana) e onde travaram. Corrija primeiro o **crítico** (não conclui a tarefa) e o **alto** (erro frequente ou perda de dados).
 - **Sites**: nota **90 ou mais** no Lighthouse em Desempenho, Acessibilidade, Boas práticas e SEO.
 
 ## 7. Checagem automática dos projetos

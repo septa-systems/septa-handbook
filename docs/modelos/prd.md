@@ -3,21 +3,23 @@
 Status: rascunho / aprovado · Responsável: ____ · Data: __/__/____
 
 ## Problema
-O que o usuário sofre, do ponto de vista dele. (vem da entrevista)
+O que o usuário sofre, do ponto de vista dele. Vem da entrevista.
 
 ## Como medir o sucesso
-Número concreto. Ex.: "faltas caem de 5 para menos de 1 por semana".
+Um número concreto. Ex.: "as faltas caem de 5 para menos de 1 por semana".
+
+**Meta de usabilidade** (tarefa principal, com número): ex.: "9 de 10 tutores agendam sozinhos em até 2 minutos, pelo celular".
 
 ## Solução
 O que vai ser feito, em poucas linhas.
 
 ## Usuários
-| Papel | O que faz no sistema |
-|---|---|
-| | |
+| Papel | O que faz no sistema | Aparelho |
+|---|---|---|
+| | | celular / PC |
 
 ## Glossário
-Palavras do negócio do cliente, que viram nomes no código.
+Palavras do negócio do cliente, que viram os nomes no código.
 | Termo | Significado |
 |---|---|
 | | |
@@ -29,10 +31,16 @@ Palavras do negócio do cliente, que viram nomes no código.
 Módulos novos e alterados, com a interface de cada um (o que recebe e o que devolve).
 
 ## Decisões de implementação
-Modelo de dados, regras, limites, dados que já existem.
+Modelo de dados, regras, limites e dados que já existem.
 
-## Testes
-O que testar e em qual fronteira (de preferência pela interface dos módulos).
+## Casos de teste
+Escritos antes de programar. Viram os testes do pytest quase um para um. Inclua sempre os limites da regra, o clique duplo e o acesso de outra empresa.
+
+| ID | Cenário | Ação | Resultado esperado |
+|---|---|---|---|
+| CT01 | Horário já ocupado | Agendar | Recusa com mensagem clara |
+| CT02 | Mesmo pedido enviado 2 vezes | Reenviar | Agenda uma vez só |
+| CT03 | Usuário da empresa A | Abrir cliente da empresa B | 404; nada vaza |
 
 ## Fora do escopo
 O que NÃO será feito agora.
