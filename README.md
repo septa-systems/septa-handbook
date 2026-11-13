@@ -15,9 +15,22 @@ Todo sócio e todo Claude segue este manual.
 | [docs/SEGURANCA.md](docs/SEGURANCA.md) | Segurança: pessoas, IA, código, LGPD, incidente |
 | [docs/NOVO-REPO.md](docs/NOVO-REPO.md) | Como criar o repo de um projeto novo (`scripts/novo-repo.sh`) |
 | [docs/modelos/](docs/modelos/) | Modelos: entrevista com cliente, PRD, arquitetura, ADR |
+| [scripts/novo-repo.sh](scripts/novo-repo.sh) | Cria e configura um repo novo (só o Tech lead) |
+| [modelo-site](https://github.com/septa-systems/modelo-site) e [modelo-sistema](https://github.com/septa-systems/modelo-sistema) | Projetos-base: todo site e sistema nasce de um deles |
 | [.claude/skills/](.claude/skills/) | Comandos do Claude: `/grill-me`, `/write-prd`, `/arquitetura`, `/revisar-tela` |
 | [docs/DECISOES.md](docs/DECISOES.md) | Tudo que o time já decidiu |
 | `septa-empresa` (repo privado) | Guia da empresa: preço, vendas, cargos, hospedagem. Só para os sócios |
+
+## Sócio novo: por onde começar
+
+1. Aceite o convite da organização (com 2FA ativado) e peça para entrar no time `socios`.
+2. Numa pasta `Septa`, rode:
+   ```
+   git clone https://github.com/septa-systems/septa-handbook.git
+   gh repo clone septa-systems/septa-empresa
+   claude
+   ```
+3. Peça ao Claude para ler o `septa-empresa/GUIA.md` e este `CLAUDE.md`. Uma vez por semana, `git pull` nos dois.
 
 ## Como mudar este manual
 
