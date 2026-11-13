@@ -9,7 +9,7 @@ Segurança é decidida **no projeto** (seção 6 do `arquitetura.md`), não reme
 - Senhas no **Bitwarden** (cofre compartilhado). Nunca senha por WhatsApp, e-mail ou print.
 - **Menor acesso possível**: cada um acessa só o que precisa. Painel de produção: Tech lead + dev responsável pelo cliente.
 - Senha de cliente (hospedagem, domínio, redes) fica no Bitwarden, numa pasta por cliente.
-- **Saída de sócio** (no mesmo dia): tirar do GitHub, Vercel, servidores, Bitwarden, Google Drive e trocar as senhas que ele conhecia.
+- **Saída de sócio** (no mesmo dia): tirar do GitHub, Cloudflare, Railway/VPS, Bitwarden, Google Drive e trocar as senhas que ele conhecia.
 
 ## 2. IA (Claude) e dados
 - **Nunca cole dado real de cliente no Claude**: nome, telefone, CPF, conversa, planilha, banco de produção. Use dados falsos do `seed`.

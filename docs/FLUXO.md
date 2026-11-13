@@ -45,7 +45,7 @@ Todo código da Septa segue este caminho até o ar. O Tech lead também abre bra
 
 ## Antes de ir para o ar
 
-- **Sites (Astro + Vercel):** todo PR ganha um link de prévia. O cliente aprova por ele antes do merge.
+- **Sites (Astro + Cloudflare):** todo PR ganha um link de prévia. O cliente aprova por ele antes do merge.
 - **Sistemas (Django):** ambiente de teste entra quando tiver o 1º cliente (ver parte 3, Ambientes).
 
 ## Revisão: o que olhar
