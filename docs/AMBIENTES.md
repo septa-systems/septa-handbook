@@ -8,6 +8,23 @@ Todo projeto da Septa roda em 3 lugares:
 | **Teste** | conferir antes de publicar, mostrar ao cliente | time e cliente |
 | **Produção** | o que está no ar de verdade | cliente e usuários dele |
 
+### E os nomes que aparecem por aí?
+
+| Nome comum | Na Septa |
+|---|---|
+| LOCAL | **Local** |
+| DEV (compartilhado) | **Teste**: com uma branch por tarefa e PR pequeno, o código junta na `main` várias vezes por dia |
+| TEST / QA | a **checagem automática** de todo PR + os 5 minutos tentando quebrar na revisão + o **Teste** |
+| HOMOLOG | **Teste**: nos sites, o link de prévia do PR, que o cliente aprova; nos sistemas, `teste-<cliente>` |
+| PROD | **Produção** |
+
+**Por que só 3:** cada ambiente a mais é mais um servidor para pagar, atualizar e proteger, e o mesmo time testaria tudo de novo em cada um. Faz sentido em empresa com time de QA separado. Se um cliente exigir homologação própria, cria-se uma, com ADR.
+
+### CI e CD
+- **CI (integração contínua):** a checagem de todo PR (Padrão do time + Site ou Sistema). Ficou vermelho, não junta.
+- **Sites:** *Continuous Deployment*. Entrou na `main`, vai para o ar sozinho.
+- **Sistemas:** *Continuous Delivery*. Entrou na `main`, vai sozinho para o **Teste**; a **Produção** só sobe pelo botão do Tech lead.
+
 ## Sites (Astro + Vercel)
 
 | | Local | Teste (prévia) | Produção |
@@ -46,6 +63,19 @@ Formulário de contato: a chave do serviço de e-mail fica no painel do Vercel. 
 5. **Erro em produção vira issue de Bug.** Urgente → `hotfix/`.
 6. **Painel de produção:** só o Tech lead e o dev responsável pelo cliente, com verificação em 2 etapas.
 7. `DEBUG=False` em teste e produção, sempre.
+
+## Se uma atualização quebrar a produção (rollback)
+
+**Primeiro volta, depois investiga.** O cliente não espera a gente achar o bug.
+
+1. **Voltar para a versão anterior:**
+   - **Site:** no Vercel, abra *Deployments*, escolha o último que funcionava e clique em **Instant Rollback**. Leva segundos.
+   - **Sistema:** suba de novo a versão anterior pelo mesmo botão de deploy, escolhendo o commit anterior, ou use o **Rollback** no painel do Railway/Render. O deploy de produção é montado com o 1º cliente, e já deve nascer aceitando a escolha da versão.
+2. **Avisar** no grupo Código o que caiu e que já voltou.
+3. **Corrigir com calma:** issue de Bug, `git revert` do PR que quebrou (em `hotfix/`), ou a correção com o teste que pegaria o erro. Só depois disso sobe de novo.
+4. **Dado estragado** (a atualização gravou errado): restaure o backup, com o Tech lead, e siga o `docs/SEGURANCA.md` seção 7 se envolver dado pessoal.
+
+**O que permite voltar sem quebrar o banco:** migration em 2 passos (`docs/PADROES.md` seção 5). Se uma versão apaga uma coluna junto com o código que a usa, a versão anterior não roda mais e o rollback falha.
 
 ## O que todo projeto precisa ter
 
