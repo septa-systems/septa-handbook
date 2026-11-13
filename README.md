@@ -17,6 +17,7 @@ Todo sócio e todo Claude segue este manual.
 | [docs/modelos/](docs/modelos/) | Modelos: entrevista com cliente, PRD, arquitetura, ADR |
 | [.claude/skills/](.claude/skills/) | Comandos do Claude: `/grill-me`, `/write-prd`, `/arquitetura`, `/revisar-tela` |
 | [docs/DECISOES.md](docs/DECISOES.md) | Tudo que o time já decidiu |
+| `septa-empresa` (repo privado) | Guia da empresa: preço, vendas, cargos, hospedagem. Só para os sócios |
 
 ## Como mudar este manual
 

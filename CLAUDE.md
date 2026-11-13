@@ -31,6 +31,7 @@ Estúdio de tecnologia com 7 sócios.
 ## Antes de começar qualquer tarefa
 1. Rode `git pull` e confira se está na branch da tarefa, nunca na `main`.
 2. Leia `docs/DECISOES.md` para saber o que o time já decidiu.
+   - Tarefa fora do código (preço, proposta, venda, post, mensagem para cliente)? Leia também o `GUIA.md` do repo **privado** `septa-empresa` (clonado ao lado deste). Ele tem preço e estratégia: nada dele vai para repositório público.
 3. Leia a issue da tarefa e trabalhe só no que ela pede.
 4. Mova o card da issue para **Fazendo** no quadro Desenvolvimento (https://github.com/orgs/septa-systems/projects/1):
    ```
