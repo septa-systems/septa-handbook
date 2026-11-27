@@ -4,6 +4,7 @@ Uma linha por decisão, a mais nova em cima. Antes de mudar algo que já foi dec
 
 | Data | Decisão | Quem decidiu |
 |---|---|---|
+| 27/11/2026 | Marca: títulos em Manrope (no lugar da Outfit), Inter no texto; Outfit fica só no nome SEPTA do logo. Comparado na proposta visual do site (site-septa, ADR 0003) | Tech lead |
 | 13/11/2026 | GitHub da org: 2FA obrigatório; membros não criam, apagam nem mudam a visibilidade de repos (só o Tech lead, pelo novo-repo.sh); time `socios` com Write em todo repo | Tech lead |
 | 13/11/2026 | SaaS e sistemas em multi-tenancy (banco único com empresa_id); WhatsApp pela API oficial da Meta, aviso só como utilidade, franquia na mensalidade e excedente/marketing repassados | Tech lead |
 | 13/11/2026 | Hospedagem: sites na Cloudflare (Vercel grátis proíbe uso comercial), 1º teste no site da Septa; sistemas no Railway até o 3º, VPS nosso a partir do 4º; domínio e e-mail no nome do cliente. Detalhes no docs/AMBIENTES.md | Tech lead |
